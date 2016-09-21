@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="20dp"
+                android:paddingRight="22dp"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                tools:background="@drawable/bg_gradient"
+                android:descendantFocusability="blocksDescendants">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hole 184:"
+        android:id="@+id/scoreName"
+        android:textSize="18sp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="11"
+        android:id="@+id/scoreValue"
+        android:textSize="18sp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/increaseScore"
+        android:background="@android:drawable/ic_input_add"
+        android:layout_alignTop="@+id/decreaseScore"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:focusable="false"
+        android:focusableInTouchMode="false"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/decreaseScore"
+        android:background="@android:drawable/ic_delete"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/increaseScore"
+        android:layout_toStartOf="@+id/increaseScore"
+        android:focusable="false"
+        android:focusableInTouchMode="false"/>
+</RelativeLayout>
