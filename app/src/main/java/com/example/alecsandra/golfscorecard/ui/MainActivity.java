@@ -49,12 +49,12 @@ public class MainActivity extends Activity {
         if(json == ""){
             Score[] scores = new Score[18];
 
-            for(int i = 0; i < 18; i++ ){
+            for(int i = 0; i < scores.length; i++ ){
+                int scoreNameValue = i+1;
 
                 Score score = new Score();
-                score.setScoreName("Hole " + i + ": ");
+                score.setScoreName("Hole " + scoreNameValue + ": ");
                 score.setScoreValue(0);
-
                 scores[i] = score;
             }
             mScores = Arrays.copyOf(scores, scores.length, Score[].class);
