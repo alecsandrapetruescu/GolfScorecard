@@ -16,9 +16,8 @@ public class ScoreAdapter extends BaseAdapter {
 
     private Context mContext;
     private Score[] mScores;
-    private int mPosition;
 
-    public ScoreAdapter(Context context, Score[] scores){
+    public ScoreAdapter(Context context, Score[] scores) {
         mContext = context;
         mScores = scores;
     }
@@ -42,8 +41,7 @@ public class ScoreAdapter extends BaseAdapter {
     public View getView(final int position, View convertView, ViewGroup parent) {
         final ViewHolder holder;
 
-        mPosition = position;
-        if (convertView == null){
+        if (convertView == null) {
             convertView = LayoutInflater.from(mContext).inflate(R.layout.score_list_item, null);
             holder = new ViewHolder();
             holder.scoreName = (TextView) convertView.findViewById(R.id.scoreName);
@@ -64,7 +62,7 @@ public class ScoreAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 Log.d("build ", "score name : " + mScores[position].getScoreName() + "score  : " + mScores[position].getScoreValue());
-                mScores[position].setScoreValue(mScores[position].getScoreValue()+1);
+                mScores[position].setScoreValue(mScores[position].getScoreValue() + 1);
                 mScores[position].setScoreName(mScores[position].getScoreName());
                 holder.scoreName.setText(mScores[position].getScoreName() + "");
                 holder.scoreValue.setText(mScores[position].getScoreValue() + "");
@@ -75,10 +73,13 @@ public class ScoreAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 Log.d("build ", "score name : " + mScores[position].getScoreName() + "score  : " + mScores[position].getScoreValue());
-                mScores[position].setScoreValue(mScores[position].getScoreValue()-1);
+                int decreaseScore = mScores[position].getScoreValue() - 1;
+                if (decreaseScore < 0) decreaseScore = 0;
+                mScores[position].setScoreValue(decreaseScore);
                 mScores[position].setScoreName(mScores[position].getScoreName());
                 holder.scoreName.setText(mScores[position].getScoreName() + "");
-                holder.scoreValue.setText(mScores[position].getScoreValue() + "");            }
+                holder.scoreValue.setText(mScores[position].getScoreValue() + "");
+            }
         });
 
         return convertView;
