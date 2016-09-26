@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     @BindView(android.R.id.list) ListView mListView;
     @BindView(android.R.id.empty) TextView mEmptyTextView;
 
-    private static final String PREFS_FILE = "com.teamtreehouse.golfscorecard.preferences";
+    private static final String PREFS_FILE = "com.alecsandra.golfscorecard.preferences";
     private static final String KEY_SCORES = "KEY_SCORES";
     private SharedPreferences mSharedPreferences;
     private SharedPreferences.Editor mEditor;
